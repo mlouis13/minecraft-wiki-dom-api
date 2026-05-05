@@ -10,10 +10,21 @@
 	justify-content: space-between;
 	align-items: center;
 	width: max-content;
-	border: solid 1px black;
+
 	padding: 8px;
 	border-radius: 99999px;
 }
+input::placeholder {
+	font-weight: 700;
+	font-style: Bold;
+
+	line-height: 100%;
+	letter-spacing: 0%;
+
+	vertical-align: middle;
+	color: #dbdbdb;
+}
+
 .search {
 	border: 0;
 }

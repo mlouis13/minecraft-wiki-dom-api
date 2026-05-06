@@ -79,8 +79,30 @@
 			<section class="terre"></section>
 			<section class="stone"></section>
 			<section class="realMain">
-				<h1>Arena</h1>
-				<p>Choose an entity to spawn inside the Arena.</p>
+				<div class="align">
+					<h1>Arena</h1>
+					<p class="isOpen">open</p>
+				</div>
+				<p>Choose an entity to spawn inside the <span>Arena.</span></p>
+				<form id="chooseMob" class="chooseMob">
+					<div class="special">
+						<div class="same">
+							<h4>entity</h4>
+							<select name="mob" id="">
+								<option value="chose">chose</option>
+							</select>
+						</div>
+						<div class="same">
+							<h4>X cordinates</h4>
+							<input class="coordonates" type="text" placeholder="0" />
+						</div>
+						<div class="same">
+							<h4>Y cordinates</h4>
+							<input class="coordonates" type="text" placeholder="0" />
+						</div>
+					</div>
+					<button class="spawn">SPAWN</button>
+				</form>
 			</section>
 		</main>
 	</body>

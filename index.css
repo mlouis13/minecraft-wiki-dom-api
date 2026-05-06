@@ -1,19 +1,21 @@
 .realMain {
+	gap: 20px;
+	padding: 20px;
+	width: 80%;
+	left: 22px;
+}
+main {
 	background-color: #e6eff4;
 	display: flex;
 	flex-direction: column;
 	color: #3a3a3a;
-	gap: 20px;
-    padding: 20px;
-}
-main {
-    position: relative;
-    width: 100%;
+	position: relative;
+	width: 100%;
 }
 .mobsimg {
 	width: 337px;
 	height: 297px;
-    width: max-content;
+    object-fit: contain;
 }
 .redpart {
 	display: flex;
@@ -32,6 +34,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+    gap: 12px;
 }
 hr {
 	color: #3a3a3a;
@@ -51,17 +54,18 @@ label {
 	display: flex;
 	background-color: white;
 	align-items: center;
-    color: #DBDBDB;
+	color: #dbdbdb;
 	padding: 8px;
+    gap: 12px;
 	border-radius: 8px;
 }
 .statsentity {
-    gap: 12px;
+	gap: 12px;
 	display: grid;
 	grid-template-areas:
 		"c t"
 		"h a"
-		"d";
+		"d d"
 }
 .classifie {
 	grid-area: "c";
@@ -79,19 +83,48 @@ label {
 	grid-area: "d";
 }
 .searchentity {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 .slc {
-    display: flex;
+	display: flex;
 
-    padding: 6px;
-    border: none;
-    width: 40%;
-    border-radius: 4px;
+	padding: 6px;
+	border: none;
+	width: 90%;
+	border-radius: 4px;
 }
 .stats {
-    padding: 8px;
-    border-radius: 4px;
+	padding: 8px;
+	border-radius: 4px;
+	width: 80%;
+}
+.stone {
+	height: 245vh;
+}
+.srcflex {
+    display: flex;
+    justify-content: center;
+}
+.btnsrc {
+	border: none;
+	padding: 12px 36px;
+	background-color: #4f8c69;
+	border-radius: 99px;
+	width: max-content;
+	color: white;
+	font-size: 20px;
+    font-weight: bold;
+}
+.noentity {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+}
+.enty {
+    font-weight: bold;
+    font-size: 22px;
+    color: #8C8C8C;
 }

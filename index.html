@@ -73,6 +73,9 @@
 			</nav>
 		</header>
 		<main>
+			<section class="ciel"></section>
+			<section class="terre"></section>
+			<section class="stone"></section>
 			<section class="realMain">
 				<h1>Explore Minecraft entities</h1>
 				<div class="redpart">
@@ -90,9 +93,11 @@
 						meaning, the term "mob" is short for "mobile entity".[1] All
 						entities can be attacked and hurt (from falling, attacked by
 						a player or another entity, falling into the void, hit by an arrow,
-						etc), and have some form of voluntary movement. Different types of
-						entities often have unique AI and drop good or bad loot depending on
-						the entity that was killed.
+						etc), and have some form of voluntary movement.
+					</p>
+					<p>
+						Different types of entities often have unique AI and drop good or
+						bad loot depending on the entity that was killed.
 					</p>
 					<img src="./assets/allmobsmc.png" class="mobsimg" alt="" />
 				</div>
@@ -124,35 +129,37 @@
 					</label>
 					<div class="statsentity">
 						<div class="classifie">
-							<p>Classification</p>
+							<p class="boldtxt">Classification</p>
 							<select class="slc" name="" id="">
 								<option value="">Choose</option>
 							</select>
 						</div>
 						<div class="type">
-							<p>Type</p>
+							<p class="boldtxt">Type</p>
 							<select class="slc" name="" id="">
-								<option value="">Choose</option>
+								<option value="">Choose</qoption>
 							</select>
 						</div>
 						<div class="health">
-							<p>Health</p>
+							<p class="boldtxt">Health</p>
 							<input class="stats" type="text" placeholder="18" />
 						</div>
 						<div class="armor">
-							<p>Armor</p>
+							<p class="boldtxt">Armor</p>
 							<input class="stats" type="text" placeholder="12" />
 						</div>
 						<div class="damage">
-							<p>Damage</p>
+							<p class="boldtxt">Damage</p>
 							<input class="stats" type="text" placeholder="2" />
 						</div>
 					</div>
-					<button>SEARCH</button>
+                    <div class="srcflex">
+					<button class="btnsrc">SEARCH</button>
+                    </div>
 				</div>
 				<div class="hr"></div>
 				<div class="noentity">
-					<p>No entity found</p>
+					<p class="enty">No entity found</p>
 					<svg
 						width="54"
 						height="54"
@@ -168,5 +175,6 @@
 				</div>
 			</section>
 		</main>
+        <script src="./index.js"></script>
 	</body>
 </html>

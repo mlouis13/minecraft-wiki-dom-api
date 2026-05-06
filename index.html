@@ -73,94 +73,100 @@
 			</nav>
 		</header>
 		<main>
-			<h1>Explore Minecraft entities</h1>
-			<div class="redpart">
-				<img src="./assets/tableau.png" class="tabimg" alt="" />
-				<p>
-					<span class="boldtxt">This page use many images.</span> It is not
-					recommended for people with limited or slow internet connections to
-					read through this page.
-				</p>
-			</div>
-			<div class="entitypart">
-				<p>
-					An <span class="boldtxt">Entity</span> is an AI-driven
-					game entity resembling a living creature. Besides its common meaning,
-					the term "mob" is short for "mobile entity".[1] All entities can be
-					attacked and hurt (from falling, attacked by a player or another
-					entity, falling into the void, hit by an arrow, etc), and have some
-					form of voluntary movement. Different types of entities often have
-					unique AI and drop good or bad loot depending on the entity that was
-					killed.
-				</p>
-				<img src="./assets/allmobsmc.png" class="mobsimg" alt="" />
-			</div>
-			<div class="listentity">
-				<h2>List of entities</h2>
-				<hr />
-				<p>
-					Entities are classifie by their nature from the player's perspective.
-					You can search for one or multiples entities by their name using the
-					search bar or simply by filling appropriate filters (type, health,
-					armor, damage, etc..)
-				</p>
-			</div>
-			<div class="searchentity">
-				<label for="">
+			<section class="realMain">
+				<h1>Explore Minecraft entities</h1>
+				<div class="redpart">
+					<img src="./assets/tableau.png" class="tabimg" alt="" />
+					<p>
+						<span class="boldtxt">This page use many images.</span> It is not
+						recommended for people with limited or slow internet connections to
+						read through this page.
+					</p>
+				</div>
+				<div class="entitypart">
+					<p>
+						An <span class="boldtxt">Entity</span> is an AI-driven
+						game entity resembling a living creature. Besides its common
+						meaning, the term "mob" is short for "mobile entity".[1] All
+						entities can be attacked and hurt (from falling, attacked by
+						a player or another entity, falling into the void, hit by an arrow,
+						etc), and have some form of voluntary movement. Different types of
+						entities often have unique AI and drop good or bad loot depending on
+						the entity that was killed.
+					</p>
+					<img src="./assets/allmobsmc.png" class="mobsimg" alt="" />
+				</div>
+				<div class="listentity">
+					<h2>List of entities</h2>
+					<hr />
+					<p>
+						Entities are classifie by their nature from the player's
+						perspective. You can search for one or multiples entities by their
+						name using the search bar or simply by filling appropriate filters
+						(type, health, armor, damage, etc..)
+					</p>
+				</div>
+				<div class="searchentity">
+					<label for="">
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 18 18"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M6.5 0C8.22391 0 9.87721 0.684819 11.0962 1.90381C12.3152 3.12279 13 4.77609 13 6.5C13 8.11 12.41 9.59 11.44 10.73L11.71 11H12.5L17.5 16L16 17.5L11 12.5V11.71L10.73 11.44C9.59 12.41 8.11 13 6.5 13C4.77609 13 3.12279 12.3152 1.90381 11.0962C0.684819 9.87721 0 8.22391 0 6.5C0 4.77609 0.684819 3.12279 1.90381 1.90381C3.12279 0.684819 4.77609 0 6.5 0ZM6.5 2C4 2 2 4 2 6.5C2 9 4 11 6.5 11C9 11 11 9 11 6.5C11 4 9 2 6.5 2Z"
+								fill="#262626"
+							/>
+						</svg>
+						<input type="text" placeholder="Search..." name="" id="" />
+					</label>
+					<div class="statsentity">
+						<div class="classifie">
+							<p>Classification</p>
+							<select class="slc" name="" id="">
+								<option value="">Choose</option>
+							</select>
+						</div>
+						<div class="type">
+							<p>Type</p>
+							<select class="slc" name="" id="">
+								<option value="">Choose</option>
+							</select>
+						</div>
+						<div class="health">
+							<p>Health</p>
+							<input class="stats" type="text" placeholder="18" />
+						</div>
+						<div class="armor">
+							<p>Armor</p>
+							<input class="stats" type="text" placeholder="12" />
+						</div>
+						<div class="damage">
+							<p>Damage</p>
+							<input class="stats" type="text" placeholder="2" />
+						</div>
+					</div>
+					<button>SEARCH</button>
+				</div>
+				<div class="hr"></div>
+				<div class="noentity">
+					<p>No entity found</p>
 					<svg
-						width="18"
-						height="18"
-						viewBox="0 0 18 18"
+						width="54"
+						height="54"
+						viewBox="0 0 54 54"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							d="M6.5 0C8.22391 0 9.87721 0.684819 11.0962 1.90381C12.3152 3.12279 13 4.77609 13 6.5C13 8.11 12.41 9.59 11.44 10.73L11.71 11H12.5L17.5 16L16 17.5L11 12.5V11.71L10.73 11.44C9.59 12.41 8.11 13 6.5 13C4.77609 13 3.12279 12.3152 1.90381 11.0962C0.684819 9.87721 0 8.22391 0 6.5C0 4.77609 0.684819 3.12279 1.90381 1.90381C3.12279 0.684819 4.77609 0 6.5 0ZM6.5 2C4 2 2 4 2 6.5C2 9 4 11 6.5 11C9 11 11 9 11 6.5C11 4 9 2 6.5 2Z"
-							fill="#262626"
+							d="M26.6667 0C11.92 0 0 11.92 0 26.6667C0 41.4133 11.92 53.3333 26.6667 53.3333C33.7391 53.3333 40.5219 50.5238 45.5228 45.5228C50.5238 40.5219 53.3333 33.7391 53.3333 26.6667C53.3333 11.92 41.3333 0 26.6667 0ZM12.6933 18.1867L15.52 15.36L18.3467 18.1867L21.1733 15.36L24 18.1867L21.1733 21.0133L24 23.84L21.1733 26.6667L18.3467 23.84L15.52 26.6667L12.6933 23.84L15.52 21.0133L12.6933 18.1867ZM13.04 41.3333C15.1733 35.8933 20.4533 32 26.6667 32C32.88 32 38.16 35.8933 40.2933 41.3333H13.04ZM40.64 23.84L37.8133 26.6667L34.9867 23.84L32.16 26.6667L29.3333 23.84L32.16 21.0133L29.3333 18.1867L32.16 15.36L34.9867 18.1867L37.8133 15.36L40.64 18.1867L37.8133 21.0133L40.64 23.84Z"
+							fill="#8C8C8C"
 						/>
 					</svg>
-					<input type="text" placeholder="Search..." name="" id="" />
-				</label>
-				<div class="statsentity">
-					<div class="classifie">
-						<p>Classification</p>
-						<select name="" id=""></select>
-					</div>
-					<div class="type">
-						<p>Type</p>
-						<select name="" id=""></select>
-					</div>
-					<div class="health">
-						<p>Health</p>
-						<input type="text" placeholder="18" />
-					</div>
-					<div class="armor">
-						<p>Armor</p>
-						<input type="text" placeholder="12" />
-					</div>
-					<div class="damage">
-						<p>Damage</p>
-						<input type="text" placeholder="2" />
-					</div>
 				</div>
-				<button>SEARCH</button>
-			</div>
-			<div class="hr"></div>
-			<div class="noentity">
-				<p>No entity found</p>
-				<svg
-					width="54"
-					height="54"
-					viewBox="0 0 54 54"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M26.6667 0C11.92 0 0 11.92 0 26.6667C0 41.4133 11.92 53.3333 26.6667 53.3333C33.7391 53.3333 40.5219 50.5238 45.5228 45.5228C50.5238 40.5219 53.3333 33.7391 53.3333 26.6667C53.3333 11.92 41.3333 0 26.6667 0ZM12.6933 18.1867L15.52 15.36L18.3467 18.1867L21.1733 15.36L24 18.1867L21.1733 21.0133L24 23.84L21.1733 26.6667L18.3467 23.84L15.52 26.6667L12.6933 23.84L15.52 21.0133L12.6933 18.1867ZM13.04 41.3333C15.1733 35.8933 20.4533 32 26.6667 32C32.88 32 38.16 35.8933 40.2933 41.3333H13.04ZM40.64 23.84L37.8133 26.6667L34.9867 23.84L32.16 26.6667L29.3333 23.84L32.16 21.0133L29.3333 18.1867L32.16 15.36L34.9867 18.1867L37.8133 15.36L40.64 18.1867L37.8133 21.0133L40.64 23.84Z"
-						fill="#8C8C8C"
-					/>
-				</svg>
-			</div>
+			</section>
 		</main>
 	</body>
 </html>

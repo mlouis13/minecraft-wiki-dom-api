@@ -1,38 +1,97 @@
-main {
-    background-color: #E6EFF4;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.realMain {
+	background-color: #e6eff4;
+	display: flex;
+	flex-direction: column;
+	color: #3a3a3a;
+	gap: 20px;
     padding: 20px;
-    color: #3A3A3A;
+}
+main {
+    position: relative;
+    width: 100%;
 }
 .mobsimg {
-    width: 337px;
-    height: 297px;
-    object-fit: cover;
-    width: 100%;
+	width: 337px;
+	height: 297px;
+    width: max-content;
 }
-.redpart{
-    display: flex;
-    gap: 12px;
-    background-color: #F5C2CD;
-    border-left: 5px solid #BC5C70;
+.redpart {
+	display: flex;
+	gap: 12px;
+	background-color: #f5c2cd;
+	border-left: 5px solid #bc5c70;
 }
-.tabimg{
-    width: 59px;
-    height: 60px;
+.tabimg {
+	width: 59px;
+	height: 60px;
 }
-.boldtxt{
-    font-weight: bold;
+.boldtxt {
+	font-weight: bold;
 }
-.entitypart{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.entitypart {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 hr {
-    color: #3A3A3A;
+	color: #3a3a3a;
 }
 .hr {
-    border: 1px solid #3A3A3A;
+	border: 1px solid #3a3a3a;
+}
+.listentity {
+	display: flex;
+	gap: 12px;
+	flex-direction: column;
+}
+input {
+	border: none;
+}
+label {
+	display: flex;
+	background-color: white;
+	align-items: center;
+    color: #DBDBDB;
+	padding: 8px;
+	border-radius: 8px;
+}
+.statsentity {
+    gap: 12px;
+	display: grid;
+	grid-template-areas:
+		"c t"
+		"h a"
+		"d";
+}
+.classifie {
+	grid-area: "c";
+}
+.type {
+	grid-area: "t";
+}
+.health {
+	grid-area: "h";
+}
+.armor {
+	grid-area: "a";
+}
+.damage {
+	grid-area: "d";
+}
+.searchentity {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.slc {
+    display: flex;
+
+    padding: 6px;
+    border: none;
+    width: 40%;
+    border-radius: 4px;
+}
+.stats {
+    padding: 8px;
+    border-radius: 4px;
 }

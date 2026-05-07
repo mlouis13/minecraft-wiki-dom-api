@@ -1,8 +1,8 @@
 .realMain {
-	gap: 20px;
-	padding: 20px;
-	width: 80%;
-	left: 22px;
+	gap: 24px;
+	padding: 26px 30px;
+	width: 70%;
+	left: 30px;
 }
 main {
 	background-color: #e6eff4;
@@ -12,14 +12,10 @@ main {
 	position: relative;
 	width: 100%;
 }
-.mobsimg {
-	width: 337px;
-	height: 297px;
-    object-fit: contain;
-}
 .redpart {
 	display: flex;
 	gap: 12px;
+    padding: 12px;
 	background-color: #f5c2cd;
 	border-left: 5px solid #bc5c70;
 }
@@ -34,6 +30,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+    gap: 12px;
+}
+.bothtxt {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 hr {
@@ -60,7 +61,7 @@ label {
 	border-radius: 8px;
 }
 .statsentity {
-	gap: 12px;
+	gap: 24px;
 	display: grid;
 	grid-template-areas:
 		"c t"
@@ -85,15 +86,21 @@ label {
 .searchentity {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 24px;
 }
 .slc {
 	display: flex;
-
 	padding: 6px;
 	border: none;
-	width: 90%;
+    width: 100%;
 	border-radius: 4px;
+}
+.cls {
+    display: flex;
+    padding: 6px;
+    border: none;
+    width: 67%;
+    border-radius: 4px;
 }
 .stats {
 	padding: 8px;
@@ -101,7 +108,7 @@ label {
 	width: 80%;
 }
 .stone {
-	height: 245vh;
+	height: 255vh;
 }
 .srcflex {
     display: flex;
@@ -127,4 +134,28 @@ label {
     font-weight: bold;
     font-size: 22px;
     color: #8C8C8C;
+}
+@media screen and (width > 850px) {
+  .statsentity {
+	display: grid;
+	grid-template-areas:
+		"c t h a d";
+}
+.entitypart {
+    display: flex;
+    flex-direction: row;
+}
+.mobsimg {
+    width: 313px;
+    height: 266px;
+    object-fit: contain;
+}
+.bothtxt {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+}
+@media screen and (width > 1440px) {
+ 
 }

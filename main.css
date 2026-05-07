@@ -59,42 +59,40 @@ main {
 	position: relative;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 .terre {
 	background-image: url(assets/dirt-background.png);
 	position: absolute;
-	z-index: 2;
+	z-index: -1;
 	width: 100%;
 	height: 269px;
-	top: 110px;
+	top: 100px;
 }
 .ciel {
 	background-image: url(assets/background-cloud.png);
 	position: absolute;
 	width: 100%;
-	z-index: 2;
-	height: 110px;
+	z-index: -1;
+	height: 116px;
+	top: 0;
 }
 .stone {
 	background: url(assets/black-background.png) repeat;
 
 	position: absolute;
-	z-index: 1;
+	z-index: -2;
 	width: 100%;
-	height: 100vh;
 }
 
 .realMain {
 	margin-top: 160px;
 	margin-right: 10px;
-	z-index: 3;
 	background-color: #e6eff4;
-
 	display: flex;
 
 	flex-direction: column;
 	border-radius: 12px;
-	width: 80%;
 }
 #change {
 	background-color: transparent;

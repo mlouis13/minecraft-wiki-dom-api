@@ -7,11 +7,12 @@
 .label1 {
 	background-color: white;
 	display: flex;
-	justify-content: space-between;
+
 	align-items: center;
-	width: max-content;
+	width: 30%;
 
 	padding: 8px;
+	gap: 4px;
 	border-radius: 99999px;
 }
 input::placeholder {
@@ -27,15 +28,17 @@ input::placeholder {
 
 .search {
 	border: 0;
+	width: 70%;
 }
 
 nav {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	background-image: url(assets/black-background.png);
 	width: 97%;
 	padding: 7px;
+	gap: 36px;
 }
 .logo {
 	display: flex;
@@ -88,9 +91,13 @@ main {
 	z-index: 3;
 	background-color: #e6eff4;
 	top: 180px;
-	left: 40px;
+
 	display: flex;
 	flex-direction: column;
 	border-radius: 12px;
 	width: 80%;
+}
+#change {
+	background-color: transparent;
+	border: none;
 }

@@ -46,7 +46,43 @@ form {
 	border-radius: 999999px;
 }
 .realMain {
-	padding: 16px;
-	gap: 16px;
-	left: 30px;
+	padding: 24px;
+	gap: 24px;
+	left: 20px;
+}
+h3 {
+	font-weight: 500;
+	font-style: Medium;
+	font-size: 22px;
+	color: #3a3a3a;
+	line-height: 100%;
+	letter-spacing: 0%;
+	vertical-align: middle;
+}
+hr {
+	color: #3a3a3a;
+}
+table {
+	border-collapse: collapse;
+}
+thead {
+	background-color: #d9d9d9;
+	border: 1px solid #8e8e8e;
+}
+th {
+	font-weight: 400;
+
+	line-height: 100%;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	color: #3a3a3a;
+}
+.placeholderDErien {
+	background-color: white;
+	border: 1px solid #8c8c8c;
+	width: 100%;
+	height: 130px;
+}
+.stone {
+	height: 160vh;
 }

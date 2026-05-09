@@ -1,130 +1,145 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 * {
-	font-family: "Rubik", sans-serif;
-	padding: 0;
-	margin: 0;
+  font-family: "Rubik", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 .label1 {
-	background-color: white;
-	display: flex;
+  background-color: white;
+  display: flex;
 
-	align-items: center;
-	width: 30%;
+  align-items: center;
+  width: 30%;
 
-	padding: 8px;
-	gap: 4px;
-	border-radius: 99999px;
+  padding: 8px;
+  gap: 4px;
+  border-radius: 99999px;
 }
 input::placeholder {
-	font-weight: 700;
-	font-style: Bold;
+  font-weight: 700;
+  font-style: Bold;
 
-	line-height: 100%;
-	letter-spacing: 0%;
+  line-height: 100%;
+  letter-spacing: 0%;
 
-	vertical-align: middle;
-	color: #dbdbdb;
+  vertical-align: middle;
+  color: #dbdbdb;
 }
 
 .search {
-	border: 0;
-	width: 70%;
+  border: 0;
+  width: 70%;
 }
 
 nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-image: url(assets/black-background.png);
-	width: 97%;
-	padding: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(assets/black-background.png);
+  width: 97%;
+  padding: 7px;
 }
 .logo {
-	display: flex;
-	align-items: center;
-	gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .start {
-	font-weight: 700;
-	font-style: Bold;
-	font-size: 16px;
-	color: white;
-	line-height: 100%;
-	letter-spacing: 0%;
-	text-align: center;
-	vertical-align: middle;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  color: white;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
 }
 main {
-	width: 100%;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .terre {
-	background-image: url(assets/dirt-background.png);
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 269px;
-	top: 100px;
+  background-image: url(assets/dirt-background.png);
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 269px;
+  top: 100px;
 }
 .ciel {
-	background-image: url(assets/background-cloud.png);
-	position: absolute;
-	width: 100%;
-	z-index: -1;
-	height: 116px;
-	top: 0;
+  background-image: url(assets/background-cloud.png);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  height: 116px;
+  top: 0;
 }
 .stone {
-	background: url(assets/black-background.png) repeat;
+  background: url(assets/black-background.png) repeat;
 
-	position: absolute;
-	z-index: -2;
-	width: 100%;
+  position: absolute;
+  z-index: -2;
+  width: 100%;
 }
 
 .realMain {
-	margin-top: 160px;
+  margin-top: 160px;
 
-	background-color: #e6eff4;
-	display: flex;
+  background-color: #e6eff4;
+  display: flex;
 
-	flex-direction: column;
-	border-radius: 12px;
+  flex-direction: column;
+  border-radius: 12px;
 }
 #change {
-	background-color: transparent;
-	border: none;
+  background-color: transparent;
+  border: none;
 }
 .navchoice {
-	display: none;
-	color: white;
-	gap: 12px;
+  display: none;
+  color: white;
+  gap: 12px;
 }
 .svgmoon {
-	display: none;
+  display: none;
+}
+.underline {
+  text-decoration: underline;
+}
+a {
+  font-weight: 600;
+  font-style: SemiBold;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
 }
 @media screen and (min-width: 850px) {
-	nav {
-		width: 98%;
-		padding: 8.5px;
-	}
-	.navchoice {
-		display: flex;
-		font-weight: bold;
-	}
-	.svgmoon {
-		display: block;
-	}
-	#change {
-		display: none;
-	}
+  nav {
+    width: 98%;
+    padding: 8.5px;
+  }
+  .navchoice {
+    display: flex;
+    font-weight: bold;
+  }
+  .svgmoon {
+    display: block;
+  }
+  #change {
+    display: none;
+  }
 }
 @media screen and (min-width: 1439px) {
-	nav {
-		width: 99%;
-		padding: 7px;
-	}
+  nav {
+    width: 99%;
+    padding: 7px;
+  }
 }

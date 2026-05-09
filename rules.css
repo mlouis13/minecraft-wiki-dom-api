@@ -1,0 +1,42 @@
+.stone {
+  height: 220vh;
+}
+h1 {
+  font-weight: 300;
+  font-style: Light;
+  font-size: 48px;
+
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  vertical-align: middle;
+  color: #3a3a3a;
+}
+.realMain {
+  gap: 16px;
+  width: 70%;
+  padding: 32px;
+}
+h2 {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #3a3a3a;
+}
+span {
+  font-weight: 600;
+  font-style: SemiBold;
+
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.neuille {
+  color: #3a3a3a;
+}
+.default {
+  color: blue;
+  text-decoration: underline;
+}

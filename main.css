@@ -127,7 +127,7 @@ a {
 
   width: 100%;
   position: absolute;
-  bottom: 315px;
+  bottom: 260px;
 }
 #test::backdrop {
   background-color: #3a3a3af2;

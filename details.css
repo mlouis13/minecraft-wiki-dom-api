@@ -82,6 +82,9 @@ hr {
     flex-direction: column;
     gap: 12px;
 }
+.bluetxt {
+    color: #0246F1;
+}
 @media screen and (width > 850px) {
  .desc {
     display: flex;

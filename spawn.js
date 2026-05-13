@@ -18,25 +18,25 @@ form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const newdata = new FormData(form);
 	const entityId = parseInt(newdata.get("mob"));
-	const x = newdata.get("coX");
-	const z = newdata.get("coZ");
+	const x = Number.parseInt(newdata.get("coX"));
+	const z = Number.parseInt(newdata.get("coZ"));
 	console.log(parseInt(entityId));
 	spawnEntities(entityId, x, z);
 });
 
-
-
 async function spawnEntities(a, b, c) {
+	const body = {
+		entityId: a,
+		x: b,
+		z: c,
+	};
+	console.log(body);
 	const response = await fetch(API_URL + "arena/entities", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",
 		},
-		body: JSON.stringify({
-			entityId: a,
-			x: b,
-			z: c,
-		}),
+		body: JSON.stringify(body),
 	});
 
 	const data = await response.json();

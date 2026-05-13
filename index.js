@@ -23,20 +23,19 @@ async function searchEntities(
 	armor,
 	damage,
 ) {
-	const response = await fetch(URL + "entities");
-	const responseJS = await response.json();
+	let response = await fetch(URL + "entities");
+	let responseJS = await response.json();
 	console.log(responseJS);
 	remove.remove();
+
 	for (let i = 0; i < responseJS.length; i++) {
-		tabEntity.style.display = "flex";
-		tabEntity.style.justify_content = "row";
 		const name1 = document.createElement("h2");
 		name1.classList.add("name");
 		name1.textContent = responseJS[i].name;
 		const img = document.createElement("img");
 		img.setAttribute("src", responseJS[i].image);
-		img.style.width = "300px";
-		img.style.height = "300px";
+		img.style.width = "210px";
+		img.style.height = "150px";
 		const div = document.createElement("div");
 		div.classList.add("align");
 		const classification1 = document.createElement("p");
@@ -52,6 +51,25 @@ async function searchEntities(
 		btn.classList.add("btn");
 		const card = document.createElement("div");
 		card.classList.add("div");
+		if (responseJS[i].type == "neutral") {
+			card.classList.add("divbeige");
+			card.classList.remove("div");
+			name1.classList.add("namebeige");
+			name1.classList.add("name");
+			hr.classList.add("hrbeige");
+			hr.classList.remove("hr");
+			btn.classList.add("btnbeige");
+			btn.classList.remove("btn");
+		} else if (responseJS[i].type == "hostile") {
+			card.classList.add("divred");
+			card.classList.remove("div");
+			name1.classList.add("namered");
+			name1.classList.add("name");
+			hr.classList.add("hrred");
+			hr.classList.remove("hr");
+			btn.classList.add("btnred");
+			btn.classList.remove("btn");
+		}
 		div.append(classification1, type1);
 		card.append(name1, img, div, hr, btn);
 		tabEntity.appendChild(card);

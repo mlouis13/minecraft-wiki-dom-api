@@ -129,7 +129,8 @@ label {
 	align-items: center;
 }
 .noentity2 {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr;
 	flex-direction: column;
 	gap: 12px;
 	align-items: center;
@@ -154,7 +155,48 @@ label {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
+
 	gap: 12px;
+	max-width: 259px;
+	max-height: 317px;
+}
+.divred {
+	border: 2px solid #d24646;
+
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 259px;
+	max-height: 317px;
+}
+.namered {
+	background-color: #d24646;
+	display: flex;
+	justify-content: center;
+
+	box-shadow: inset -4px -4px rgba(0, 0, 0, 0.25);
+	padding: 12px;
+	color: white;
+}
+
+.divbeige {
+	border: 2px solid #e3b599;
+
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 259px;
+	max-height: 317px;
+}
+.namebeige {
+	display: flex;
+	justify-content: center;
+	background-color: #e3b599;
+	box-shadow: inset -4px -4px rgba(0, 0, 0, 0.25);
+	padding: 12px;
+	color: white;
 }
 .fauxA {
 	color: #0246f1;
@@ -192,6 +234,18 @@ label {
 	border: none;
 	height: 3px;
 }
+.hrbeige {
+	color: #e3b599;
+	background-color: #e3b599;
+	border: none;
+	height: 3px;
+}
+.hrred {
+	color: #d24646;
+	background-color: #d24646;
+	border: none;
+	height: 3px;
+}
 .btn {
 	display: flex;
 	justify-content: center;
@@ -208,7 +262,39 @@ label {
 	letter-spacing: 0%;
 	text-align: center;
 }
-@media screen and (width > 850px) {
+.btnred {
+	display: flex;
+	justify-content: center;
+	background-color: #d24646;
+	border: none;
+	box-shadow: -4px -4px 2px 0px #00000040 inset;
+	padding: 12px;
+	color: white;
+	width: 100%;
+	font-family: Rubik;
+	font-weight: 700;
+	font-style: Bold;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-align: center;
+}
+.btnbeige {
+	display: flex;
+	justify-content: center;
+	background-color: #e3b599;
+	border: none;
+	box-shadow: -4px -4px 2px 0px #00000040 inset;
+	padding: 12px;
+	color: white;
+	width: 100%;
+	font-family: Rubik;
+	font-weight: 700;
+	font-style: Bold;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-align: center;
+}
+@media screen and (min-width: 850px) and (max-width: 1440px) {
 	.statsentity {
 		display: grid;
 		grid-template-areas: "c t h a d";
@@ -227,6 +313,13 @@ label {
 		flex-direction: column;
 		gap: 12px;
 	}
+	.noentity2 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 }
-@media screen and (width > 1440px) {
+@media screen and (min-width: 1440px) {
+	.noentity2 {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
 }

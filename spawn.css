@@ -128,3 +128,15 @@ h4 {
 
 	vertical-align: middle;
 }
+.btndel {
+	background-color: #F25959;
+	padding: 4px;
+	border-radius: 4px;
+	width: max-content;
+	border: none;
+	color: white;
+}
+.tblbody {
+	background-color: white;
+	padding: 12px;
+}

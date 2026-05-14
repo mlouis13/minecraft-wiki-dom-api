@@ -107,8 +107,8 @@ async function searchEntities(info) {
         card.append(name1, img, div, hr, btn);
         tabEntity.appendChild(card);
         btn.addEventListener("click", () => {
-          window.location.href = "details.html";
-          tryIt();
+          window.location.href = "details.html?name=" + responseJS[i].name;
+          console.log(responseJS[i]);
         });
         isClicked = true;
       }
@@ -163,8 +163,8 @@ async function searchEntities(info) {
         card.append(name1, img, div, hr, btn);
         tabEntity.appendChild(card);
         btn.addEventListener("click", () => {
-          window.location.href = "details.html";
-          tryIt();
+          window.location.href = "details.html?name=" + responseJS[i].name;
+          console.log(responseJS[i]);
         });
         isClicked = false;
       }

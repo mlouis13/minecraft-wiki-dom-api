@@ -2,6 +2,7 @@ const URL = "http://play.hatlas.net:3000/v1/";
 const form = document.querySelector("#searchEntity");
 const tabEntity = document.querySelector("#tabEntity");
 const remove = document.querySelector("#remove");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = new FormData(form);
@@ -105,6 +106,10 @@ async function searchEntities(info) {
         div.append(classification1, type1);
         card.append(name1, img, div, hr, btn);
         tabEntity.appendChild(card);
+        btn.addEventListener("click", () => {
+          window.location.href = "details.html";
+          tryIt();
+        });
         isClicked = true;
       }
     } else {
@@ -157,6 +162,10 @@ async function searchEntities(info) {
         div.append(classification1, type1);
         card.append(name1, img, div, hr, btn);
         tabEntity.appendChild(card);
+        btn.addEventListener("click", () => {
+          window.location.href = "details.html";
+          tryIt();
+        });
         isClicked = false;
       }
     }

@@ -16,31 +16,38 @@ form.addEventListener("submit", (e) => {
   tabEntity.classList.add("noentity2");
 });
 function test(name, classification, type, health, armor, damage) {
+  let params = [];
+
   if (name !== "") {
-    searchEntities(URL + "entities?name=" + name);
-  } else {
-    if (classification !== "") {
-      searchEntities(URL + "entities?classification=" + classification);
-    } else {
-      if (type !== "") {
-        searchEntities(URL + "entities?type=" + type);
-      } else {
-        if (health !== "") {
-          searchEntities(URL + "entities?health=" + health);
-        } else {
-          if (armor !== "") {
-            searchEntities(URL + "entities?armor=" + armor);
-          } else {
-            if (damage !== "") {
-              searchEntities(URL + "entities?damage=" + damage);
-            } else {
-              searchEntities(URL + "entities");
-            }
-          }
-        }
-      }
-    }
+    params.push(`name=${name}`);
   }
+
+  if (classification !== "") {
+    params.push(`classification=${classification}`);
+  }
+
+  if (type !== "") {
+    params.push(`type=${type}`);
+  }
+
+  if (health !== "") {
+    params.push(`health=${health}`);
+  }
+
+  if (armor !== "") {
+    params.push(`armor=${armor}`);
+  }
+
+  if (damage !== "") {
+    params.push(`damage=${damage}`);
+  }
+
+  let url = URL + "entities";
+
+  if (params.length > 0) {
+    url += "?" + params.join("&");
+  }
+  searchEntities(url);
 }
 
 async function searchEntities(info) {

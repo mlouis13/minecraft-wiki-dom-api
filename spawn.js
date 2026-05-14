@@ -1,86 +1,144 @@
 const API_URL = "http://play.hatlas.net:3000/v1/";
+
 const form = document.querySelector("#chooseMob");
 const select = document.querySelector("#arenachoose");
 const tableBody = document.querySelector("#entitiesTableBody");
+const arena = document.querySelector("#terrain");
+
+const ARENA_WIDTH = 37;
+const ARENA_HEIGHT = 16;
+
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const response = await fetch(API_URL + "entities");
-  const data = await response.json();
-  console.log(data);
-  searchmob();
-  for (let i = 0; i < data.length; i++) {
-    const neuille = document.createElement("option");
-    neuille.setAttribute("value", data[i].id);
-    neuille.textContent = data[i].name;
-    select.appendChild(neuille);
-  }
+	await loadEntitiesOptions();
+	await loadArena();
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const newdata = new FormData(form);
-  const entityId = parseInt(newdata.get("mob"));
-  const x = Number.parseInt(newdata.get("coX"));
-  const z = Number.parseInt(newdata.get("coZ"));
-  console.log(parseInt(entityId));
-  spawnEntities(entityId, x, z);
-});
 
-async function spawnEntities(a, b, c) {
-  const body = {
-    entityId: a,
-    x: b,
-    z: c,
-  };
-  const response = await fetch(API_URL + "arena/entities", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+async function loadEntitiesOptions() {
+	const response = await fetch(API_URL + "entities");
+	const data = await response.json();
 
-  const data = await response.json();
-  console.log(data);
+	select.innerHTML = "";
+
+	for (const entity of data) {
+		const option = document.createElement("option");
+		option.value = entity.id;
+		option.textContent = entity.name;
+		select.appendChild(option);
+	}
 }
 
-async function searchmob() {
-  const response = await fetch(API_URL + "arena/entities");
 
-  const data = await response.json();
-  for (let i = 0; i < data.length; i++) {
-    const tr = document.createElement("tr");
-    const tdImg = document.createElement("td");
-    const img = document.createElement("img");
-    img.setAttribute("src", data[i].entity.icon);
-    img.width = 40;
+form.addEventListener("submit", async (e) => {
+	e.preventDefault();
 
-    tdImg.appendChild(img);
-    const tdName = document.createElement("td");
-    tdName.textContent = data[i].entity.name;
+	const formData = new FormData(form);
 
-    const tdX = document.createElement("td");
-    tdX.textContent = data[i].arena.x;
+	const entityId = parseInt(formData.get("mob"));
+	const x = parseInt(formData.get("coX"));
+	const z = parseInt(formData.get("coZ"));
 
-    const tdZ = document.createElement("td");
-    tdZ.textContent = data[i].arena.z;
+	await spawnEntity(entityId, x, z);
+	await loadArena();
+});
 
-    const tdstrength = document.createElement("td");
-    tdstrength.textContent = data[i].entity.strength;
 
-    const button = document.createElement("button");
+async function spawnEntity(entityId, x, z) {
+	await fetch(API_URL + "arena/entities", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			entityId,
+			x,
+			z,
+		}),
+	});
+}
 
-    button.textContent = "DELETE";
 
-    button.classList.add("btndel");
+async function deleteEntity(id) {
+	await fetch(API_URL + "arena/entities/" + id, {
+		method: "DELETE",
+	});
+}
 
-    tr.appendChild(tdImg);
-    tr.appendChild(tdName);
-    tr.appendChild(tdX);
-    tr.appendChild(tdZ);
-    tr.appendChild(tdstrength);
-    tr.appendChild(button);
-    tr.classList.add("tblbody");
-    tableBody.appendChild(tr);
-  }
+
+async function loadArena() {
+	const response = await fetch(API_URL + "arena/entities");
+	const mobs = await response.json();
+	console.log(mobs)
+	tableBody.innerHTML = "";
+	arena.innerHTML = "";
+
+	for (const mob of mobs) {
+		renderTableRow(mob);
+		renderMobOnArena(mob);
+	}
+}
+
+
+function renderTableRow(mob) {
+	const tr = document.createElement("tr");
+
+	const tdImg = document.createElement("td");
+	const img = document.createElement("img");
+	img.src = mob.entity.icon;
+	img.width = 40;
+	tdImg.appendChild(img);
+
+	const tdName = document.createElement("td");
+	tdName.textContent = mob.entity.name;
+
+	const tdX = document.createElement("td");
+	tdX.textContent = mob.x;
+
+	const tdZ = document.createElement("td");
+	tdZ.textContent = mob.z;
+
+	const tdStrength = document.createElement("td");
+	tdStrength.textContent = mob.entity.strength;
+
+
+	const tdAction = document.createElement("td");
+	const button = document.createElement("button");
+	button.textContent = "DELETE";
+	button.classList.add("btndel");
+
+	button.addEventListener("click", async () => {
+		await deleteEntity(mob.id);
+		await loadArena();
+	});
+
+	tdAction.appendChild(button);
+
+	tr.append(tdImg, tdName, tdX, tdZ, tdStrength, tdAction);
+	tableBody.appendChild(tr);
+}
+
+
+function renderMobOnArena(mob) {
+	const wrapper = document.createElement("div");
+	wrapper.classList.add("mob-wrapper");
+
+	const img = document.createElement("img");
+	img.src = mob.entity.icon;
+	img.classList.add("mob");
+
+	const label = document.createElement("div");
+	label.classList.add("mob-label");
+	label.textContent = `${mob.x}, ${mob.z}`;
+
+	const xPercent = (mob.x / ARENA_WIDTH) * 100;
+	const zPercent = (mob.z / ARENA_HEIGHT) * 100;
+
+	wrapper.style.left = xPercent + "%";
+	wrapper.style.top = zPercent + "%";
+
+	wrapper.appendChild(img);
+	wrapper.appendChild(label);
+
+	arena.appendChild(wrapper);
 }

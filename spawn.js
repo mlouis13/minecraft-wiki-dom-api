@@ -8,12 +8,16 @@ const arena = document.querySelector("#terrain");
 const ARENA_WIDTH = 37;
 const ARENA_HEIGHT = 16;
 
-
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadEntitiesOptions();
 	await loadArena();
-});
+	await checkArenaStatus();
 
+	setInterval(async () => {
+		await loadArena();
+		await checkArenaStatus();
+	}, 3000);
+});
 
 async function loadEntitiesOptions() {
 	const response = await fetch(API_URL + "entities");
@@ -29,7 +33,6 @@ async function loadEntitiesOptions() {
 	}
 }
 
-
 form.addEventListener("submit", async (e) => {
 	e.preventDefault();
 
@@ -42,7 +45,6 @@ form.addEventListener("submit", async (e) => {
 	await spawnEntity(entityId, x, z);
 	await loadArena();
 });
-
 
 async function spawnEntity(entityId, x, z) {
 	await fetch(API_URL + "arena/entities", {
@@ -58,18 +60,16 @@ async function spawnEntity(entityId, x, z) {
 	});
 }
 
-
 async function deleteEntity(id) {
 	await fetch(API_URL + "arena/entities/" + id, {
 		method: "DELETE",
 	});
 }
 
-
 async function loadArena() {
 	const response = await fetch(API_URL + "arena/entities");
 	const mobs = await response.json();
-	console.log(mobs)
+	console.log(mobs);
 	tableBody.innerHTML = "";
 	arena.innerHTML = "";
 
@@ -78,7 +78,6 @@ async function loadArena() {
 		renderMobOnArena(mob);
 	}
 }
-
 
 function renderTableRow(mob) {
 	const tr = document.createElement("tr");
@@ -101,7 +100,6 @@ function renderTableRow(mob) {
 	const tdStrength = document.createElement("td");
 	tdStrength.textContent = mob.entity.strength;
 
-
 	const tdAction = document.createElement("td");
 	const button = document.createElement("button");
 	button.textContent = "DELETE";
@@ -117,7 +115,6 @@ function renderTableRow(mob) {
 	tr.append(tdImg, tdName, tdX, tdZ, tdStrength, tdAction);
 	tableBody.appendChild(tr);
 }
-
 
 function renderMobOnArena(mob) {
 	const wrapper = document.createElement("div");
@@ -141,4 +138,35 @@ function renderMobOnArena(mob) {
 	wrapper.appendChild(label);
 
 	arena.appendChild(wrapper);
+}
+async function checkArenaStatus() {
+	const response = await fetch(API_URL + "arena");
+	const data = await response.json();
+
+	console.log(data);
+
+	const isClosed = data.status === "close";
+
+	const inputs = document.querySelectorAll("input, select, button");
+	const statusText = document.querySelector(".isOpen");
+
+	inputs.forEach((element) => {
+		element.disabled = isClosed;
+
+		if (isClosed) {
+			element.style.backgroundColor = "#DBDBDB";
+			element.style.color = "#8E8E8E";
+			element.style.cursor = "not-allowed";
+			statusText.textContent = "CLOSED";
+			statusText.style.backgroundColor = "#F25959";
+			statusText.style.color = "white";
+		} else {
+			element.style.backgroundColor = "";
+			element.style.color = "";
+			element.style.cursor = "";
+			statusText.textContent = "OPEN";
+			statusText.style.backgroundColor = "green";
+			statusText.style.color = "white";
+		}
+	});
 }

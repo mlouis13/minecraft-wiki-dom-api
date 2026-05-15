@@ -111,7 +111,12 @@ async function searchEntities(info) {
       });
     }
   } else {
+    tabEntity.innerHTML = "";
     remove.style.display = "flex";
+    remove.classList.add("noentity");
+    tabEntity.classList.add("noentity");
+    tabEntity.classList.remove("noentity2");
+    tabEntity.appendChild(remove);
     console.log("lol");
   }
 }
